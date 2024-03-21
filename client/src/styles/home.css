@@ -1,0 +1,5 @@
+.home-banner {
+  background-image: url("../../public/banner.jpg");
+  background-position: 30% 95%;
+  object-fit: cover;
+}
