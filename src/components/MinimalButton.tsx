@@ -1,10 +1,15 @@
 import React from "react";
 
-const MinimalButton = ({ body }: { body: string }) => {
+interface typeProps {
+  body: string;
+  className?: any;
+}
+
+const MinimalButton = ({ body, className }: typeProps) => {
   return (
     <a
       href="#faq"
-      className="inline-block no-underline transition-colors hover:text-foreground text-muted-foreground"
+      className={`inline-block no-underline transition-colors hover:text-foreground text-muted-foreground ${className}`}
     >
       {body}
     </a>

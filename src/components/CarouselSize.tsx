@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/carousel";
 import { Button } from "./ui/button";
 import { Badge } from "./ui/badge";
+import { shortenTitle } from "@/lib/utils";
+import Link from "next/link";
 
 export function CarouselSize({ contentList }) {
   return (
@@ -27,20 +29,24 @@ export function CarouselSize({ contentList }) {
               <Card>
                 <CardContent className="aspect-square items-center p-0">
                   <img
-                    className="w-full h-2/3 object-cover object-top rounded-t-lg"
+                    className="w-full h-4/5 object-cover object-top rounded-t-lg"
                     src={`https://media.themoviedb.org/t/p/original/${item.poster_path}`}
                   ></img>
                   <div className="p-4">
                     <div className="flex justify-between mb-4">
-                      <h1 className="font-bold">
-                        {item.title.length > 16
-                          ? `${item.title.slice(0, 16)}...`
-                          : item.title}
-                      </h1>
-                      <Badge>{item.vote_average.toFixed(1)}</Badge>
+                      {item.media_type === "tv" ? (
+                        <h1 className="font-bold">{shortenTitle(item.name)}</h1>
+                      ) : (
+                        <h1 className="font-bold">
+                          {shortenTitle(item.title)}
+                        </h1>
+                      )}
+                      <div>
+                        <Badge>{item.vote_average.toFixed(1)}</Badge>
+                      </div>
                     </div>
-                    <Button variant="outline" className="w-full">
-                      See More
+                    <Button variant="outline" className="w-full" asChild>
+                      <Link href={`browse/${item.id}`}>See More</Link>
                     </Button>
                   </div>
                 </CardContent>
