@@ -10,10 +10,12 @@ import {
   findMovieById,
   formatDate,
 } from "@/lib/utils";
+import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import StarIcon from "@mui/icons-material/Star";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import React from "react";
+import { Textarea } from "@/components/ui/textarea";
 
 async function page({ params }: { params: { id: number } }) {
   const {
@@ -96,25 +98,62 @@ async function page({ params }: { params: { id: number } }) {
           </div>
         </div>
       </div>
-      <div className="w-4/5">
-        <h1 className="w-full border-b font-semibold text-2xl">Reviews</h1>
-        <div className="p-4 bg-slate-100 space-y-4 w-3/5 rounded-lg mt-4">
-          <p className="font-semibold">5.0</p>
-          <p className="font-semibold">Title inserted by user</p>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Perspiciatis unde aperiam, corrupti saepe fugiat blanditiis tempora
-            enim aspernatur et! Esse temporibus voluptatem architecto,
-            consequuntur nesciunt possimus quia delectus saepe fuga.
-          </p>
-          <div className="flex items-center space-x-2">
-            <Avatar>
-              <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <div>
-              <p className="font-semibold">bptiago</p>
-              <p className="text-slate-500">Data de publicação</p>
+      <div
+        className="w-4/5 flex flex-row-reverse justify-center space-x-4"
+        style={{ gap: "30px" }}
+      >
+        <div className="w-1/5 h-min border rounded-lg p-4 space-y-4">
+          <h1 className="font-semibold">Write a review</h1>
+          <Input placeholder="Title" />
+          <Textarea placeholder="Description..." />
+          <Button className="w-full">Submit</Button>
+        </div>
+        <div className="w-3/5 mb-4">
+          <h1 className="w-full border-b font-semibold text-2xl">Reviews</h1>
+          <div className="p-4 bg-slate-100 space-y-4 w-full rounded-lg mt-4">
+            <p className="font-semibold">5.0</p>
+            <p className="font-semibold">Test Title</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis unde aperiam, corrupti saepe fugiat blanditiis
+              tempora enim aspernatur et! Esse temporibus voluptatem architecto,
+              consequuntur nesciunt possimus quia delectus saepe fuga.
+            </p>
+            <div className="flex items-center space-x-2">
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="font-semibold">bptiago</p>
+                <p className="text-slate-500">04/01/2024</p>
+              </div>
+            </div>
+          </div>
+          <div className="p-4 bg-slate-100 space-y-4 w-full rounded-lg mt-4">
+            <p className="font-semibold">5.0</p>
+            <p className="font-semibold">Test Title</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Perspiciatis unde aperiam, corrupti saepe fugiat blanditiis
+              tempora enim aspernatur et! Esse temporibus voluptatem architecto,
+              consequuntur nesciunt possimus quia delectus saepe fuga.
+            </p>
+            <div className="flex items-center space-x-2">
+              <Avatar>
+                <AvatarImage
+                  src="https://github.com/shadcn.png"
+                  alt="@shadcn"
+                />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="font-semibold">bptiago</p>
+                <p className="text-slate-500">04/01/2024</p>
+              </div>
             </div>
           </div>
         </div>
