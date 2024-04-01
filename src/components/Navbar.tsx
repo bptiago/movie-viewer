@@ -10,12 +10,15 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import MinimalButton from "./MinimalButton";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between px-24 py-4 border-b-2">
+    <div className="flex justify-between px-24 py-4 border-b">
       <div className="flex space-x-6 items-center">
-        <CameraIcon style={{ fontSize: "32px" }}></CameraIcon>
+        <Link href="/">
+          <CameraIcon style={{ fontSize: "32px" }}></CameraIcon>
+        </Link>
         <Button variant="ghost">Browse</Button>
         <Button variant="ghost">Movies</Button>
         <Button variant="ghost">TV Shows</Button>

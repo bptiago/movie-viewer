@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="px-24 py-8 border-t-2">
+    <div className="px-24 py-8 border-t">
       <p className="text-slate-500">
         Built by{" "}
         <a

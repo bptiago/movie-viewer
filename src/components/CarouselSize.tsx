@@ -46,7 +46,15 @@ export function CarouselSize({ contentList }) {
                       </div>
                     </div>
                     <Button variant="outline" className="w-full" asChild>
-                      <Link href={`browse/${item.id}`}>See More</Link>
+                      <Link
+                        href={
+                          item.media_type === "tv"
+                            ? `browse/tv/${item.id}`
+                            : `browse/movie/${item.id}`
+                        }
+                      >
+                        See More
+                      </Link>
                     </Button>
                   </div>
                 </CardContent>

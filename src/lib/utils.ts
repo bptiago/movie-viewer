@@ -40,3 +40,14 @@ export async function findMovieById(id: number) {
 export function shortenTitle(title: string) {
   return title.length > 16 ? `${title.slice(0, 16)}...` : title;
 }
+
+export function formatDate(date: string): string {
+  return date.replace(/-/g, "/");
+}
+
+export function calculatePictureDuration(timeInMinutes: number): string {
+  let minutes = timeInMinutes % 60;
+  let hours = (timeInMinutes - minutes) / 60;
+
+  return hours > 0 ? `${hours} h ${minutes} min` : `${minutes} min`;
+}
